@@ -1,0 +1,15 @@
+Uploads
+update
+Install
+Data
+App/Common/*
+App/Api/Common/*
+App/Api/Conf/*
+App/Admin/Common/*
+App/Admin/Conf/*
+App/Home/Conf/*
+App/Home/Common/*
+App/User/common/*
+App/User/Conf/*
+ThinkPHP
+
