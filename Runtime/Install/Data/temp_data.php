@@ -1,1 +1,0 @@
-a:11:{s:7:"db_type";s:5:"mysql";s:7:"db_host";s:9:"127.0.0.1";s:7:"db_port";s:4:"3306";s:7:"db_user";s:4:"root";s:7:"db_pass";s:6:"123456";s:7:"db_name";s:9:"thinkblog";s:9:"db_prefix";s:3:"th_";s:10:"admin_user";s:5:"admin";s:10:"admin_pass";s:5:"admin";s:18:"admin_pass_confirm";s:5:"admin";s:11:"admin_email";s:16:"791845283@qq.com";}
