@@ -76,7 +76,7 @@ SQL
 
         //增加用户信息
         foreach ($list as &$e) {
-            $e['user'] = query_user(array('uid', 'face','avatar64', 'nickname', 'space_url'),$e['uid']);
+            $e['user'] = query_user(array('uid', 'avatar64', 'nickname', 'space_url'),$e['uid']);
         }
         unset($e);
         $config=  get_addon_config('LocalComment');
@@ -86,7 +86,7 @@ SQL
         //显示页面
        $loginuser = query_user(array('uid', 'avatar64', 'nickname', 'space_url'),$uid);
        $this->assign('loginuser', $loginuser);
-        $this->assign('list', $list);//echo '<pre>';print_r($list);
+        $this->assign('list', $list);
         $this->assign('total_count', $total_count);
         $this->assign('count', $count);
         $this->assign('app', $app);

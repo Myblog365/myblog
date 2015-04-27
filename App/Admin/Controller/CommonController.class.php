@@ -479,6 +479,7 @@ class CommonController extends Controller {
 		}
 	}
 	public function insert() {
+			
 
 		$model = D($this->dbname);
 		if (false === $data= $model->create()) {
