@@ -6,13 +6,21 @@
     <div class="col-md-6 col-md-offset-3 bg-white login-wrap">
         <h1 class="h4 text-center login-title">找回密码</h1>
         <form target="formAjax" method="post"  action="__SELF__" id="user" role="form">
-            <div class="form-group">
+            <div class="form-group clean_kj">
+                <div class="uu_left">
                 <label for="email" class="required">Email</label>
+                </div>
+                <div class="uu_right">
                 <input type="text" class="form-control" id="email" name="email" placeholder="输入邮箱地址">
+                </div>
             </div>
-            <div class="form-group">
+            <div class="form-group clecn_kj">
+                <div class="uu_left">
                 <label for="username" class="required">用户名</label>
+                </div>
+                <div class="uu_right">
                 <input type="text" class="form-control" id="username" name="username" placeholder="输入用户名">
+                </div>
             </div>
             <button type="submit" id="submit" class="btn btn-primary btn-block btn-lg">重置密码</button>
         </form>
@@ -25,7 +33,7 @@
         |
         <a href="{:U('Index/index')}">首页</a>
         |
-        <a href="{:U('Index/login')}">账号登录</a>
+        <a href="{:U('User/login')}">账号登录</a>
     </div>
 </div>
 

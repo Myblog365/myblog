@@ -2818,4 +2818,8 @@ h2.title{
 .cat_type{background: #E59C9C;}
 .art_tt{color: #587686;font-weight: bold;text-shadow: 1px 1px 2px #587686;}
 #comment-body .row img{ padding: 1px;border: 2px solid #E38383;margin-top: 8px;}
+.clean_kj{clear: both;}
+.uu_left{height: 36px;line-height: 36px;float: left;width: 16%;margin-bottom: 18px;}
+.uu_right{float:left;width:80%;height: 36px;line-height: 36px;margin-bottom: 18px;}
+.mar_left{margin-left: 16%;}
 
