@@ -9,7 +9,7 @@ if (!is_file('./Data/install.lock')) {
  * 系统调试设置
  * 项目正式部署后请设置为false
  */
-define ('APP_DEBUG',true);
+define ('APP_DEBUG',false);
 
 /**
  * 应用目录设置
@@ -22,7 +22,6 @@ define ( 'APP_PATH', './App/' );
  * 此目录必须可写，建议移动到非WEB目录
  */
 define ( 'RUNTIME_PATH', './Runtime/App/' );
-
 /**
  * 引入核心入口
  * ThinkPHP亦可移动到WEB以外的目录
