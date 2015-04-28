@@ -189,10 +189,10 @@ class HomeController extends Controller{
         foreach($info as &$rows)
         {
             $uid = $rows['uid'];
-            $wh = "id={$uid}";
-            $face = $user->where($wh)->field('face')->find();
-            $rows['face'] = $face['face'];
+            $face = query_user(array('uid','username','nickname','reg_time','space_url','last_login_time','avatar32', 'avatar64', 'avatar128', 'avatar256'),$uid);
+            $rows['face'] = $face;
         }
+        //echo '<pre>';print_r($info);
         $this->assign('comm_info',$info);
     }
 

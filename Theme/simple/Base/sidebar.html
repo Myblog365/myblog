@@ -42,12 +42,11 @@
                     <div class="art_title">最近评论</div>
                      <volist name="comm_info" id="com">
                          <div class="user_list">
-                             <if condition="$com.face eq ''">
-                                 <img border="0" alt="" src="/thinkblog/Addons/Avatar/default_32_32.jpg">
-                             <else/>
-                                 <img border="0" alt="" src="{$com.face|getFaceUrl}">
-                             </if>
-                             ：<a id="link" href="cont.php?id=4">{$com.content}</a>
+                             <eq name="com.uid" value="0">
+                                 <img src="{:getRootUrl()}Addons/Avatar/default_32_32.jpg"  >
+                                 <else/>
+                                 <img src="{$com.face.avatar32}"  >
+                             </eq>:<a id="link" href="{:U('artc/'.$com['row_id'])}">{$com.content}</a>
                          </div>
                      </volist>
                 </div>

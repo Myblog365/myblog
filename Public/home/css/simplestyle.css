@@ -830,7 +830,7 @@ a, a:hover, a:active, a:focus {
 
 .avatar-20 {
 	width: 32px;
-	height: 26px
+	height: 32px
 }
 
 .avatar-24 {
@@ -844,7 +844,7 @@ a, a:hover, a:active, a:focus {
 
 .avatar-40 {
 	width: 48px;
-	height: 40px
+	height: 48px
 }
 
 .avatar-64 {
@@ -2779,7 +2779,7 @@ h2.title{
     border-bottom:1px dashed #CBD8DB;
     overflow:hidden;
 }
-.user_list img{width:32px; border:1px solid #ffffff; height:19px; vertical-align:middle; background-color:#E38383;}
+.user_list img{width:26px; border:1px solid #ffffff; height:26px; vertical-align:middle; background-color:#E38383;}
 .user_list a{color:#587686;}
 .user_list a:hover{color:#E38383;}
 
@@ -2817,7 +2817,7 @@ h2.title{
 }
 .cat_type{background: #E59C9C;}
 .art_tt{color: #587686;font-weight: bold;text-shadow: 1px 1px 2px #587686;}
-#comment-body .row img{ padding: 1px;border: 2px solid #E38383;margin-top: 8px;}
+#comment-body .row img{ padding: 1px;border: 2px solid #dddddd;margin-top: 8px;}
 .clean_kj{clear: both;}
 .uu_left{height: 36px;line-height: 36px;float: left;width: 16%;margin-bottom: 18px;}
 .uu_right{float:left;width:80%;height: 36px;line-height: 36px;margin-bottom: 18px;}
