@@ -37,7 +37,10 @@ class UcenterController extends UserbaseController{
 	$this->display();
     }
     public function yzmail(){
-	$this->display();
+        $uid=is_login();
+        $expinfo = M('userexp')->find($uid);
+        $this->assign('expinfo',$expinfo);
+	    $this->display();
     }
     public function usermail(){
 	

@@ -145,9 +145,8 @@ class HomeController extends Controller{
    		$name=get_username($uid);
    	}
 
-   	
-   	
-    $res=send_mail($to, $subject, $body, $name, $attachment);   
+
+    $res=send_mail($to, $subject, $body, $name, $attachment);
    	if($res==1){
    		$this->success('邮件已发送，请到邮箱进行查收');
    	}else{

@@ -228,7 +228,7 @@ class UserController extends HomeController
          $Api = new UserApi();
             $res = $Api->updateInfo($uid,'admin',$data);
        
-        $this->success('密码重置成功,新密码为123456', U('Home/User/login'));
+        $this->success('密码重置成功,新密码为123456', U('Home/User/login'),5);
     }
 
   
