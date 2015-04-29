@@ -43,10 +43,10 @@
                      <volist name="comm_info" id="com">
                          <div class="user_list">
                              <eq name="com.uid" value="0">
-                                 <img src="{:getRootUrl()}Addons/Avatar/default_32_32.jpg"  >
+                                <div class="m_face"><img src="{:getRootUrl()}Addons/Avatar/default_32_32.jpg"  ></div>
                                  <else/>
-                                 <img src="{$com.face.avatar32}"  >
-                             </eq>：<a id="link" href="{:U('artc/'.$com['row_id'])}">{$com.content}</a>
+                                <div class="m_face"><img src="{$com.face.avatar32}"  ></div>
+                             </eq><div class="m_left"><a id="link" href="{:U('artc/'.$com['row_id'])}">{$com.content}</a></div>
                          </div>
                      </volist>
                 </div>

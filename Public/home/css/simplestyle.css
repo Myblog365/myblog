@@ -2773,15 +2773,18 @@ h2.title{
 }
 .art_left_list li a:hover{background:url('../images/wen2.gif') no-repeat left center; color:#E38383;}
 .user_list{
-    height:34px;
+    height:44px;
     text-align:left;
-    line-height:34px;
+    line-height:18px;
     border-bottom:1px dashed #CBD8DB;
     overflow:hidden;
 }
-.user_list img{width:26px; border:1px solid #ffffff; height:26px; vertical-align:middle; background-color:#E38383;}
+
+.user_list img{float:left;width:32px; padding:1px; border:1px solid #E38383; height:32px; vertical-align:middle;}
 .user_list a{color:#587686;}
 .user_list a:hover{color:#E38383;}
+.user_list .m_face{width: 40px;float: left;margin-top: 5px;}
+.user_list .m_left{width: 196px;float: left;margin-top: 5px;}
 
 
 .art_content{
