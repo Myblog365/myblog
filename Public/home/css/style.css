@@ -3191,13 +3191,13 @@ opacity: 1;
 /*404 page*/
 
 .body-404 {
-    background: #18d4cb;
-    color: #fff;
+    background-image:url("../images/web_bj.jpg");
+
 }
 
 .error-wrapper {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 30px;
 }
 
 .error-wrapper .icon-404{
@@ -3205,20 +3205,20 @@ opacity: 1;
     width: 289px;
     height: 274px;
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .error-wrapper .icon-4041{
     background: url("../images/4041.png") no-repeat;
-    width: 289px;
-    height: 274px;
+    width: 320px;
+    height: 270px;
     display: inline-block;
     margin-left: 30px;
    
 }
 .error-wrapper .icon-4042{
     background: url("../images/4042.png") no-repeat;
-    width: 289px;
-    height: 274px;
+    width: 320px;
+    height: 270px;
     display: inline-block;
     margin-left: 30px;
 
@@ -3232,7 +3232,7 @@ opacity: 1;
 .error-wrapper h1 {
     font-size: 90px;
     font-weight: 300;
-    margin: -50px 0 0 0;
+    margin: -5px 0 0 0;
 }
 
 .error-wrapper h2 {
@@ -3247,11 +3247,13 @@ opacity: 1;
 }
 
 .error-wrapper p.page-404  {
-    color: #7dfff7;
+    color: #587686;
+    font-weight: bold;
 }
 
 .error-wrapper p.page-404 a, .error-wrapper p.page-500 a,  .error-wrapper p.page-404 a:hover, .error-wrapper p.page-500 a:hover {
-    color: #fff;
+    color: green;
+    font-weight: bold;
 }
 
 ul.tagul li{

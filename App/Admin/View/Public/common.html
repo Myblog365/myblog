@@ -71,6 +71,24 @@ $(function(){
 	initUI();
 });
 
+var editor = KindEditor.create('textarea.editor');
+
+KindEditor.ready(function(K) {
+
+    editor = K.create('textarea[name="description"]');
+    K('#image').click(function() {
+        editor.loadPlugin('image', function() {
+            editor.plugin.imageDialog({
+                imageUrl : K('#thumb').val(),
+                clickFn : function(url, title, width, height, border, align) {
+                    K('#thumb').val(url);
+                    editor.hideDialog();
+                }
+            });
+        });
+    });
+});
+
 </script>
 <script>
 

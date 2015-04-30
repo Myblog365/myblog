@@ -1656,15 +1656,19 @@ iframe.loading {
 
 
 #footer {
-	border-top: 1px solid #cbd8db;
-	padding: 0px 0;
-	color: #888;
+	border-top: 1px dashed #428bca;
+	padding: 8px 0;
+	color: #587686;
+    font-weight: bold;
 	line-height: 1.6;
-	vertical-align: top
+	vertical-align: top;
+    background: url('../images/foot_bg.png') repeat;
+
 }
 
 #footer a {
-	color: #888
+	color: #428bca;
+    font-weight: bold;
 }
 
 #footer .site-link {
@@ -1793,7 +1797,7 @@ iframe.loading {
 
 .header{margin:26px 0 30px}
 .header h1{margin-bottom:5px}
-.header .description{font-size:16px;color:#999}
+.header .description{font-size:16px;color:#587686;font-weight: bold;text-shadow: 1px 1px 2px #587686;}
 .header .logo1 img{height:60px}
 .login-wrap{
     padding:30px;
@@ -2781,7 +2785,7 @@ h2.title{
 }
 
 .user_list img{float:left;width:32px; padding:1px; border:1px solid #E38383; height:32px; vertical-align:middle;}
-.user_list a{color:#587686;}
+.user_list a{color:#587686;font-size: 12px;}
 .user_list a:hover{color:#E38383;}
 .user_list .m_face{width: 40px;float: left;margin-top: 5px;}
 .user_list .m_left{width: 196px;float: left;margin-top: 5px;}
