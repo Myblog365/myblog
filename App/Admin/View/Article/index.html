@@ -76,7 +76,7 @@
                 <td>{$vo.cid|get_cate='name'}</td>
                 <td>{$vo.uid|get_username}</td>
 				<td>
-                    <a href="{:U('Home/Index/artc',array('id'=>$vo['id']))}" target="_blank">{$vo.title|str_cut=0,18,'utf-8',false}</a>
+                    <a href="{:U('Home/Index/artc',array('id'=>$vo['id']))}" target="_blank">{$vo.title|str_cut=0,28,'utf-8',false}</a>
                     <if condition="$vo.thumb neq ''">
                         <img src="__PUBLIC__/admin/images/img.gif" border="0" title="有缩略图" style="cursor : pointer;width:16px;height:15px;" />
                     </if>

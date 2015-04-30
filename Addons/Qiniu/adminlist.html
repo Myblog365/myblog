@@ -1,0 +1,27 @@
+<div class="data-table">
+<table  class="table table-striped table-hover">
+  <thead>
+    <tr>
+     
+      <th>ID</th>
+      <th>原文件名</th>
+      <th>名称</th>
+      <th>路径</th>
+      <th>大小</th>
+      <th>创建时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <volist id="e" name="_list">
+      <tr>
+        <td>{$e.id}</td>
+        <td>{$e.name}</td>
+        <td>{$e.savename}</td>
+        <td>{$e.savepath}</td>
+        <td>{$e.size|format_bytes}</td>
+        <td>{$e.create_time|friendlydate}</td>
+      </tr>
+    </volist>
+  </tbody>
+</table>
+</div>
