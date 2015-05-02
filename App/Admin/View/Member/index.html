@@ -24,20 +24,20 @@
                 </span>
                 </a>
 
-               
+
                             <div class="dropdown float-right mrg15R">
                                 <a href="javascript:;" class="btn medium bg-blue" title="Example dropdown" data-toggle="dropdown">
                                     <span class="button-content">
                                         <i class="glyph-icon icon-cog float-left"></i>
-                                        
+
                                         批量操作
-                                        
+
                                         <i class="glyph-icon icon-caret-down float-right"></i>
                                     </span>
                                 </a>
-                               
+
                                 <ul class="dropdown-menu float-right">
-                                    
+
                                      <li class="hidden">
                                         <a href="__URL__/outxls/ids/all" target="dwzExport">
                                             <i class="glyph-icon icon-sign-out font-size-13 mrg5R"></i>
@@ -50,8 +50,8 @@
                                             <span class="font-bold">导出选中</span>
                                         </a>
                                     </li>
-                                   
-                                   
+
+
                                     <li class="divider hidden"></li>
                                     <li>
                                         <a class="font-orange" href="{:U('selectedDelete')}"  title="确定要删除选中信息吗？" target="checkedAjaxTodo" idname="ids">
@@ -60,16 +60,16 @@
                                         </a>
                                     </li>
                                 </ul>
-                            
+
                             </div>
-                     
+
     </div>
     <div class="divider"></div>
     </form>
     <table class="table text-left"  id="zstable">
         <thead>
             <tr>
-            
+
             <th>编号</th>
             <th>用户名</th>
 				<th>昵称</th>
@@ -80,7 +80,7 @@
 				<th>登录</th>
 				<th>积分</th>
 				<th width="40">状态</th>
-               
+
                 <th class="nosort" width="30"><input type="checkbox" class="checkboxCtrl j-icheck" group="ids"></th>
                 <th class="nosort text-center" width="250">操作</th>
             </tr>
@@ -89,7 +89,7 @@
 
            <volist id="vo" name="list">
             <tr> <td>{$vo['uid']}</td>
-				<td>{$vo['uid']|query_user='username',###}</td>	
+				<td>{$vo['uid']|query_user='username',###}</td>
 					<td>{$vo['nickname']}</td>
 					<td>{$vo['uid']|getMroleNameByUserId}</td>
 					<td>{$vo['uid']|getGroupNameByUserId}</td>
@@ -108,11 +108,11 @@
                     </div>
                 </td>
             </tr>
-            
+
           </volist>
         </tbody>
     </table>
-    
+
 </div>
 
 
@@ -124,5 +124,5 @@
 
 
 
-                
+
 </block>

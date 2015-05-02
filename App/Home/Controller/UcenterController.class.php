@@ -255,13 +255,13 @@ public function artadd(){
 		$this->assign('extstr',$extstr);
 		}
 		
-		 
+	
 		
-		if($roleauth['yesart'] != 1){
+		/*if($roleauth['yesart'] != 1){
 			
 			 $this->error('你无权投稿！');
 			
-		}
+		}*/
 		}
 		 $this->display();
 	}

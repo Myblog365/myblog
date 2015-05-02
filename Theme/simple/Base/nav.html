@@ -33,10 +33,12 @@
 <!-- end 导航 --> 
 <if condition="$user_auth['uid'] gt 0">
 <ul class="opts pull-right list-inline">
-	<li><if condition="($roleauth['yesart'] eq 1) OR ($isadmin)">
+	<li>
+
 	<div class="mt10 ml20"><a href="{:U('Ucenter/artadd')}"
 		class="btn btn-primary">发布 </a></div>
-	</if></li>
+
+    </li>
 
 	<li class="mt10"><a href="javascript:void(0);"
 		data-toggle="dropdown" title="{$userinfo['nickname']}个人中心"> <if
