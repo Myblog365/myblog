@@ -255,7 +255,7 @@ public function artadd(){
 		$this->assign('extstr',$extstr);
 		}
 		
-	
+
 		
 		/*if($roleauth['yesart'] != 1){
 			
@@ -309,7 +309,7 @@ public function artedit(){
 		}
 		 D('Tags')->InsertTags($data['tag'],1,$data['id']);
 		 
-       
+
 		 
 		$data['tag']=implode(',',$data['tag']);
 		

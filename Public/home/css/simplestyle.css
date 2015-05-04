@@ -646,7 +646,7 @@ a, a:hover, a:active, a:focus {
 	display: inline-block;
 	padding: 0 8px;
 	color: #017e66;
-	background-color: #E7F2ED;
+	background-color: #39B2A9;
 	height: 24px;
 	line-height: 24px;
 	font-weight: normal;
@@ -2788,7 +2788,7 @@ h2.title{
 .user_list a{color:#587686;font-size: 12px;}
 .user_list a:hover{color:#E38383;}
 .user_list .m_face{width: 40px;float: left;margin-top: 5px;}
-.user_list .m_left{width: 196px;float: left;margin-top: 5px;}
+.user_list .m_left{width: 196px;float: left;margin-top: 3px;}
 
 
 .art_content{

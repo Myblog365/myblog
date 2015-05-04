@@ -64,13 +64,13 @@
 							</div>
 							<div class="form-group text-right">
 								<select name="status">
-									<option value="5">草稿</option>
 									
 									<if condition="($roleauth['yesshen'] eq 2) OR $isadmin"><option  value="1">直接发布</option>
 									<else />
 									<option value="2">等待复审</option>	
 									
-									</if>							
+									</if>
+                                    <option value="5">草稿</option>
 									</select>
 							
 							

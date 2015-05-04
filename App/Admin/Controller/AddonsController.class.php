@@ -224,9 +224,10 @@ str;
     public function adminList($name){
         // 记录当前列表页的cookie
        // Cookie('__forward__',$_SERVER['REQUEST_URI']);
-        
+
         
         $class = get_addon_class($name);
+
         if(!class_exists($class))
         {
         	$this->mtReturn(300, '插件不存在');
@@ -250,8 +251,12 @@ str;
         if(!isset($map))
             $map = array();
         if(isset($model))
-            $this->_list(D("Addons://{$model}/{$model}")->field($fields),$map);
-         
+        {
+            $act = "Addons://{$model}/{$model}";
+            $this->_list(D($act)->field($fields),$map);
+        }
+
+
       // dump( D("{$model}"));
         //D("Addons://{$model}/{$model}")->_after_find();
         //$this->assign('list',$list);
