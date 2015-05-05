@@ -74,10 +74,13 @@ function insert() {
          $_POST['copyright'] = "原文链接：<a href='{link}' rel='Kevin'>{$_POST['title']}</a>，转发请注明来源！";
 
         $affected = M('article') -> add($_POST);
-        $data['tag'] = explode(',',$_POST['tag']);
-        //$model_tag = \Home\Model\TagsModel();
+        if(!empty($_POST['tag']))
+        {
+            $data['tag'] = explode(',',$_POST['tag']);
+            //$model_tag = \Home\Model\TagsModel();
+            D('Tags')->InsertTags($data['tag'],1);
+        }
 
-         D('Tags')->InsertTags($data['tag'],1);
         if($affected){
             $this->mtReturn(200, '新增成功!');
         }else{
@@ -96,9 +99,11 @@ function update() {
         }
         $_POST['update_time'] = time();
 
-        $data =explode(',',$_POST['tag']);
-        D('Tags')->InsertTags($data,1,$wh['id']);
-
+        if(!empty($_POST['tag']))
+        {
+            $data =explode(',',$_POST['tag']);
+            D('Tags')->InsertTags($data,1,$wh['id']);
+        }
         $affected = M('article')->where($wh)-> save($_POST);
         if($affected){
             $this->mtReturn(200, '修改成功!');

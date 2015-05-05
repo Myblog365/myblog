@@ -1,0 +1,12 @@
+# robots.txt generated at http://www.51240.com
+User-agent: *
+Disallow: /
+Disallow: /adminBlog.php
+Disallow: /api.php
+Disallow: /install.php
+Disallow: /Public
+Disallow: /Uploads
+Disallow: /Install
+Disallow: /update
+Disallow: /ThinkPHP
+Sitemap: http://myblog365.xyz/sitemap.gz
