@@ -1767,6 +1767,12 @@ iframe.loading {
 	max-width: 310px;
 	min-height: 200px
 }
+.left_tag{
+    margin: 20px 0px;
+    max-width: 310px;
+    min-height: 200px
+}
+.left_tag li{float: left;}
 
 
 .userfile .nav-pills {
