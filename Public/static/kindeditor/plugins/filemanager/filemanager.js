@@ -79,8 +79,8 @@ KindEditor.plugin('filemanager', function(K) {
 		}
 		var elList = [];
 		function bindEvent(el, result, data, createFunc) {
-			var fileUrl = result.current_url + data.filename,
-				dirPath = encodeURIComponent(result.current_dir_path + data.filename + '/');
+			var fileUrl = K.formatUrl(result.current_url + data.filename, 'absolute'),
+				dirPath = encodeURIComponent(result.current_dir_path + data.filename);
 			if (data.is_dir) {
 				el.click(function(e) {
 					reloadPage(dirPath, orderTypeBox.val(), createFunc);
@@ -169,7 +169,7 @@ KindEditor.plugin('filemanager', function(K) {
 				div.append(photoDiv);
 				var fileUrl = result.current_url + data.filename,
 					iconUrl = data.is_dir ? imgPath + 'folder-64.gif' : (data.is_photo ? fileUrl : imgPath + 'file-64.gif');
-				var img = K('<img src="' + iconUrl + '" width="80" height="80" alt="' + data.filename + '" />');
+				var img = K('<img src="' + iconUrl + '?imageView2/0/w/80/h/80" width="80" height="80" alt="' + data.filename + '" />');
 				if (!data.is_dir || data.has_file) {
 					photoDiv.css('cursor', 'pointer');
 					bindTitle(photoDiv, data);

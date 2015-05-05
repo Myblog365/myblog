@@ -40,7 +40,8 @@
          <div class="form-label col-md-2 text-right"><label>内容：</label> </div>
 
          <div class="form-input col-md-7">
-             <textarea name="description" id="j_description"  class="j-content validate[required] required"" uploadJson="{:U('File/ke_upimg')}" fileManagerJson="{:U('File/editorfilemanager')}"  minheight="200">{$info.description}</textarea>
+             <!--<textarea name="description" id="j_description"  class="j-content validate[required] required"" uploadJson="{:U('File/ke_upimg')}" fileManagerJson="{:U('File/editorfilemanager')}"  minheight="200">{$info.description}</textarea>-->
+             <textarea name="description"  id="j_description" class='keditor required' style="width:600px;min-height:400px;visibility:hidden;">{$info.description}</textarea>
             <div class="font-yellow mrg10T">内容必须填写</div>
           </div>
      </div>

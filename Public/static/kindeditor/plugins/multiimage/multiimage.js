@@ -114,7 +114,7 @@ K.extend(KSWFUpload, {
 					return;
 				}
 				file.url = data.url;
-				K('.ke-img', itemDiv).attr('src', file.url).attr('data-status', file.filestatus).data('data', data);
+				K('.ke-img', itemDiv).attr('src', file.url + '?imageView2/0/w/80/h/80').attr('data-status', file.filestatus).data('data', data);
 				K('.ke-status > div', itemDiv).hide();
 			}
 		};

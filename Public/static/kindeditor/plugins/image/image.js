@@ -16,7 +16,8 @@ KindEditor.plugin('image', function(K) {
 		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php'),
 		imageTabIndex = K.undef(self.imageTabIndex, 0),
 		imgPath = self.pluginsPath + 'image/images/',
-		extraParams = K.undef(self.extraFileUploadParams, {}),
+		extraParams = K.undef(self.extraFileUploadParamsOne, {}),
+		token = K.undef(self.token, false),
 		filePostName = K.undef(self.filePostName, 'imgFile'),
 		fillDescAfterUploadImage = K.undef(self.fillDescAfterUploadImage, false),
 		lang = self.lang(name + '.');
@@ -37,7 +38,7 @@ KindEditor.plugin('image', function(K) {
 			hiddenElements.push('<input type="hidden" name="' + k + '" value="' + extraParams[k] + '" />');
 		}
 		var html = [
-			'<div style="padding:20px;">',
+			'<div style="padding:16px;">',
 			//tabs
 			'<div class="tabs"></div>',
 			//remote image - start
@@ -50,45 +51,27 @@ KindEditor.plugin('image', function(K) {
 			'<input type="button" class="ke-button-common ke-button" name="viewServer" value="' + lang.viewServer + '" />',
 			'</span>',
 			'</div>',
-			//size
-			'<div class="ke-dialog-row">',
-			'<label for="remoteWidth" style="width:60px;">' + lang.size + '</label>',
-			lang.width + ' <input type="text" id="remoteWidth" class="ke-input-text ke-input-number" name="width" value="" maxlength="4" /> ',
-			lang.height + ' <input type="text" class="ke-input-text ke-input-number" name="height" value="" maxlength="4" /> ',
-			'<img class="ke-refresh-btn" src="' + imgPath + 'refresh.png" width="16" height="16" alt="" style="cursor:pointer;" title="' + lang.resetSize + '" />',
-			'</div>',
-			//align
-			'<div class="ke-dialog-row">',
-			'<label style="width:60px;">' + lang.align + '</label>',
-			'<input type="radio" name="align" class="ke-inline-block" value="" checked="checked" /> <img name="defaultImg" src="' + imgPath + 'align_top.gif" width="23" height="25" alt="" />',
-			' <input type="radio" name="align" class="ke-inline-block" value="left" /> <img name="leftImg" src="' + imgPath + 'align_left.gif" width="23" height="25" alt="" />',
-			' <input type="radio" name="align" class="ke-inline-block" value="right" /> <img name="rightImg" src="' + imgPath + 'align_right.gif" width="23" height="25" alt="" />',
-			'</div>',
-			//title
-			'<div class="ke-dialog-row">',
-			'<label for="remoteTitle" style="width:60px;">' + lang.imgTitle + '</label>',
-			'<input type="text" id="remoteTitle" class="ke-input-text" name="title" value="" style="width:200px;" />',
-			'</div>',
 			'</div>',
 			//remote image - end
 			//local upload - start
 			'<div class="tab2" style="display:none;">',
 			'<iframe name="' + target + '" style="display:none;"></iframe>',
-			'<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' + target + '" action="' + K.addParam(uploadJson, 'dir=image') + '">',
+			'<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' + target + '" action="http://upload.qiniu.com/">',
 			//file
 			'<div class="ke-dialog-row">',
 			hiddenElements.join(''),
 			'<label style="width:60px;">' + lang.localUrl + '</label>',
 			'<input type="text" name="localUrl" class="ke-input-text" tabindex="-1" style="width:200px;" readonly="true" /> &nbsp;',
 			'<input type="button" class="ke-upload-button" value="' + lang.upload + '" />',
+			'<input type="hidden" name="token" value="' + token + '" />',
 			'</div>',
 			'</form>',
 			'</div>',
 			//local upload - end
 			'</div>'
 		].join('');
-		var dialogWidth = showLocal || allowFileManager ? 450 : 400,
-			dialogHeight = showLocal && showRemote ? 300 : 250;
+		var dialogWidth = showLocal || allowFileManager ? 400 : 350,
+			dialogHeight = showLocal && showRemote ? 166 : 116;
 		var dialog = self.createDialog({
 			name : name,
 			width : dialogWidth,

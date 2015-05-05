@@ -55,9 +55,9 @@
           <script src="__STATIC__/respond.min.js"></script>
         <![endif]-->
         <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="__STATIC__/uploadify/uploadify.css"> 
+        <link rel="stylesheet" type="text/css" href="__STATIC__/uploadify/uploadify.css">
         <script type="text/javascript" src="__STATIC__/layer/layeradmin.js"></script>
-         <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor-all.js"></script>
+         <script type="text/javascript" src="__STATIC__/kindeditor/kindeditor.js"></script>
          <script type="text/javascript" src="__PUBLIC__/admin/js/app.js"></script>
          <script type="text/javascript" src="__PUBLIC__/admin/js/core.js"></script>
     
@@ -70,24 +70,48 @@ var _PUBLIC_="__PUBLIC__";
 $(function(){
 	initUI();
 });
+var editor = '';
+var token1 = '';
+var token2 = '';
+var tourl = _STATIC_ + "/kindeditor/getToken.php?type=3";
+$(document).ready(function(){
 
-var editor = KindEditor.create('textarea.editor');
+    $.ajax({url: tourl, async: false, success: function(data){
 
-KindEditor.ready(function(K) {
+        KindEditor('#image').click(function() {
 
-    editor = K.create('textarea[name="description"]');
-    K('#image').click(function() {
-        editor.loadPlugin('image', function() {
-            editor.plugin.imageDialog({
-                imageUrl : K('#thumb').val(),
-                clickFn : function(url, title, width, height, border, align) {
-                    K('#thumb').val(url);
-                    editor.hideDialog();
-                }
+            editor.loadPlugin('image', function() {
+                editor.plugin.imageDialog({
+
+                    imageUrl : KindEditor('#thumb').val(),
+                    clickFn : function(url, title, width, height, border, align) {
+                        KindEditor('#thumb').val(url);
+                        editor.hideDialog();
+                    }
+                });
             });
         });
-    });
+
+
+
+        token1 = data.token1;
+        token2 = data.token2;
+        editor = KindEditor.create('textarea[name="description"]', {
+            uploadJson : 'http://upload.qiniu.com/',
+            filePostName : 'file',
+            allowFileManager : true,
+            fileManagerJson : 'fileManage.php',
+            extraFileUploadParams : {token : token2},
+            token : token1,
+            resizeType : 1,
+            afterBlur: function(){this.sync();},
+            afterCreate: function(){this.sync();}
+        });
+
+
+    }});
 });
+
 
 </script>
 <script>
