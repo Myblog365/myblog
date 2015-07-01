@@ -2,6 +2,10 @@ Uploads
 update
 Install
 Data
+Api.php
+adminBlog.php
+about.txt
+App/Api
 App/Common/*
 App/Api/Common/*
 App/Api/Conf/*
