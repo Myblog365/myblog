@@ -16,7 +16,7 @@
                 <div class="art_title">热门文章</div>
                 <div class="art_left_list ">
                     <ul>
-                        <article:list name="vo" cate="0" status="1" row="10" order='view desc,id desc' limit="true">
+                        <article:list name="vo" cate="0" status="1" row="12" order='view desc,id desc' limit="true">
 
                             <li><a href="{:ZSU('/artc/'.$vo['id'],'Index/artc',array('id'=>$vo['id']))}">{$vo.title}</a></li>
 
@@ -30,7 +30,7 @@
                 <div class="art_title">推荐文章</div>
                 <div class="art_left_list ">
                     <ul>
-                        <article:list name="vo" cate="0" status="1" row="10"  position="1" limit="true">
+                        <article:list name="vo" cate="0" status="1" row="12"  position="1" limit="true">
                            <li><a href="{:ZSU('/artc/'.$vo['id'],'Index/artc',array('id'=>$vo['id']))}">{$vo.title}</a></li>
                        </article:list>
 
@@ -53,7 +53,7 @@
                                                 <div class="widget-box clearfix">
                     <div class="art_title">热门标签</div>
                     <ul class="taglist--block">
-                    <tags:list name="vo" row="15" order="num desc" limit="true">
+                    <tags:list name="vo" row="22" order="num desc" limit="true">
                                                 <li class="mr10 tagPopup">
                             <a class="tag" href="{:ZSU('/tagart/'.$vo['id'],'Index/tagart',array('id'=>$vo['id']))}" >{$vo.title}× {$vo.num}</a>
                            

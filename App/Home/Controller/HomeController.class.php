@@ -183,7 +183,7 @@ class HomeController extends Controller{
     {
         $com = M('local_comment');
         $user = M('ucenter_member');
-       $info = $com ->where('pid=0')->order('id desc')->limit(6)->select();
+       $info = $com ->where('pid=0')->order('id desc')->limit(8)->select();
 
         foreach($info as &$rows)
         {
