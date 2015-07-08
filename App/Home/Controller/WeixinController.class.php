@@ -18,22 +18,30 @@ class WeixinController extends HomeController {
     			'appsecret'=>C('WXAPPSECRET'), //填写高级调用功能的密钥
     				
     	);
+
     	$this->wx = new \Common\Weixin\Wechat($options);
     	 
     	$this->wx->valid();
     	
         $cateid= C('WXCATEID');
         $mapcate['id']=array('in',$cateid);
-      
-       $catearr= M('cate')->where($mapcate)->select();
+
+        $catearr= M('cate')->where($mapcate)->select();
+
        $catecount= M('cate')->where($mapcate)->count();
 
       
-   
+
       foreach ($catearr as $key =>$vo){
-      
-      	$cate[$key]=array('type'=>'view','url'=>(is_ssl()?'https://':'http://').$_SERVER['HTTP_HOST'].'/'.C('WEB_DIR').'/'.ZSU('/artlist/'.$vo['id'],'Index/artlist',array('cid'=>$vo['id'])),'name'=>$vo['name']);
+
+        if(C('WEB_DIR'))
+        {
+            $cate[$key]=array('type'=>'view','url'=>(is_ssl()?'https://':'http://').$_SERVER['HTTP_HOST'].'/'.C('WEB_DIR').'/'.ZSU('/artlist/'.$vo['id'],'Index/artlist',array('cid'=>$vo['id'])),'name'=>$vo['name']);
+        }else{
+            $cate[$key]=array('type'=>'view','url'=>(is_ssl()?'https://':'http://').$_SERVER['HTTP_HOST'].ZSU('/artlist/'.$vo['id'],'Index/artlist',array('cid'=>$vo['id'])),'name'=>$vo['name']);
+        }
       }
+
       $newmenu =  array(
       		   		"button"=>
       		   			array(
