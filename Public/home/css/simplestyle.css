@@ -2047,7 +2047,7 @@ zoom: 1;
 	font-size: 14px;
 	line-height: 24px;
 	min-height: 24px;
-	margin: 0;
+	margin: 5px 0px 0px 0px;
 	word-wrap: break-word;
 }
 
@@ -2795,7 +2795,7 @@ h2.title{
 .user_list a{color:#587686;font-size: 12px;}
 .user_list a:hover{color:#E38383;}
 .user_list .m_face{width: 40px;float: left;margin-top: 5px;}
-.user_list .m_left{width: 196px;float: left;margin-top: 3px;}
+.user_list .m_left{width: 166px;float: left;margin-top: 3px;}
 
 
 .art_content{
