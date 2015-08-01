@@ -17,8 +17,17 @@ class CommonController extends Controller {
        $input->noGPC();
 	    /* 读取数据库中的配置 */
         $this->readconfig();
-      
-    
+
+        if(C('WX_DEBUG'))
+        {
+            slog(array(
+                'error_handler'=>true,
+                'optimize'=>false,                   //是否显示利于优化的参数，如果运行时间，消耗内存等，默认为false
+                'show_included_files'=>true,        //是否显示本次程序运行加载了哪些文件，默认为false
+                'force_client_id'=>C('MY_DEBUG'),   //日志强制记录到配置的client_id,默认为空
+                'allow_client_ids'=>C('DENUG_ARRAY'), //限制允许读取日志的client_id，默认为空,表示所有人都可以获得日志。
+            ),'set_config');
+        }
        
 	   if($_SESSION[C('USER_AUTH_KEY')] != 1){
 	   	

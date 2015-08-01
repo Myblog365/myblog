@@ -1,1 +1,39 @@
- 
+120.26.70.411
+查看socketLog端口是否开启
+netstat -ano|grep 1229
+
+
+查看socketLog进程是否开启了
+ps -aux | grep socketlog
+
+
+如果以上进程不存在或者端口不存在了，开启socketLog服务如下：
+socketlog-server > /dev/null &
+
+
+重启整个环境
+cd /root && ./lnmp restart
+
+
+
+LogTool的是使用方法：该工具使用的是SeasLog，个人使用习惯而已。
+在一些核心业务上，可以适当位置打log，让你在遇到问题的时候，通过log最快定位到问题在那里，
+log保存位置在Runting/Seaslog目录下
+
+\Think\LogTool::error('msg',array(),'module')
+\Think\LogTool::debug('msg',array(),'module')
+\Think\LogTool::info('msg',array(),'module')
+eg:
+\Think\LogTool::error('a bug',array(),'Login');          将会按照对应的控制器分类，建文件夹进行存储
+\Think\LogTool::error('a bug',array(),'Login/index');    将会按照对应的控制器和对应的方法分类，建文件夹进行存储
+\Think\LogTool::error('a bug');                          或者我路径都不指定了，默认是default目录
+
+
+
+
+//编译扩展的时候
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make
+make install
+/etc/init.d/php-fpm restart
