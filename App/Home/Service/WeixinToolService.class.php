@@ -59,20 +59,36 @@ class WeixinToolService extends Model{
         $dataArr = explode('_',$data['Content']);
         if(count($dataArr)>1)
         {
-            $wh['description']=array('like','%'.$dataArr[1].'%');
-            $response = $this->reply_news($wh);
+            $wh['description'] = array('like','%'.$dataArr[1].'%');
+            $order             = "id desc";
+            $response          = $this->reply_news($wh,$order);
         }else if($data['Content'] == '推荐'){
-            $wh['tj'] = 1;
-            $response = $this->reply_news($wh);
+            $wh['tj']   = 1;
+            $order      = "id desc";
+            $response   = $this->reply_news($wh,$order);
+        }else if($data['Content'] == '最新'){
+            $wh         = '';
+            $order      = "id desc";
+            $response   = $this->reply_news($wh,$order);
+        }else if($data['Content'] == '热门'){
+            $wh         = '';
+            $order      = "view desc";
+            $response   = $this->reply_news($wh,$order);
+
         }else{
-            $response['content'] =  "发送“推荐”可发送精选博客\n\r\n发送“搜索_内容”可搜索该内容的博客\n\r\n";
+            $response['content'] =  "发送“推荐”可发送精选博客\n\r\n发送“最新”可发送最新博客\n\r\n发送“热门”可发送热门博客\n\r\n发送“搜索_内容”可搜索该内容的博客\n\r\n";
             $response['type']='text';
         }
         return $response;
     }
 
-    public function  reply_news($wh){
-        $data = M('article')->where($wh)->order("id desc")->limit(5)->select();
+    public function  reply_news($wh,$order){
+        if(empty($wh))
+        {
+            $data = M('article')->order($order)->limit(5)->select();
+        }else{
+            $data = M('article')->where($wh)->order($order)->limit(5)->select();
+        }
         $articles = array();
         foreach($data as $key => $colArr)
         {
@@ -89,10 +105,10 @@ class WeixinToolService extends Model{
             }
             $Url = C('blog_url')."/index.php/artc/{$colArr['id']}.html";
             $temp = array(
-                "Title" => $colArr['title'],
-                "Description" => $colArr['description'],
-                "Url" => $Url,
-                "PicUrl" => $PicUrl,
+                "Title"         => $colArr['title'],
+                "Description"   => $colArr['description'],
+                "Url"           => $Url,
+                "PicUrl"        => $PicUrl,
             );
 
             array_push($articles,$temp);
@@ -135,9 +151,31 @@ class WeixinToolService extends Model{
     }
 
     public function  reply_event($data){
-        $response['content']='12312313';
-        $response['type']='text';
-        return $response;
+        switch ($data['Event'])
+        {
+            case "subscribe":   //关注事件
+                $title = "您好，欢迎您的关注，myblog365天天博客，致力开源，分享交流。";
+                $articles = array();
+                $articles[] = array(
+                    "Title"         => '欢迎您的关注！',
+                    "Description"   => $title,
+                    "Url"           => C('blog_url'),
+                    "PicUrl"        => C('blog_url')."/Uploads/art_thumb/image/20150430/20150430214728_91949.png",
+                );
+
+                $response['content']= $articles;
+                $response['type']   = 'news';
+                return $response;
+                break;
+            case "unsubscribe": //取消关注事件
+                $response['content']='你就这么狠心的把我取消了！';
+                $response['type']='text';
+                return $response;
+                break;
+        }
+
+
+
     }
 
 

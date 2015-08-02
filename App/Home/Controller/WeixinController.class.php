@@ -56,7 +56,7 @@ class WeixinController extends HomeController {
                    }]
             }';
             $menu = $this->weixin->menuCreate($data);
-            slog($menu);
+
         }
     }
 
@@ -66,12 +66,13 @@ class WeixinController extends HomeController {
         $wechat = new Wechat(C('token'));
         //获取客户端数据
         $data = $wechat->request();
-
         if($data && is_array($data)){
 
 
             // 客户传来的数据进行保存
-            $this->weixinTool->receive_data($data);
+            if($data['MsgType'] != 'event')
+                    $this->weixinTool->receive_data($data);
+
             switch ($data['MsgType']) {
                 case 'text':
                     $response = $this->weixinTool->reply_text($data);
