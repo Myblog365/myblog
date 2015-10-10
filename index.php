@@ -22,6 +22,7 @@ define ( 'APP_PATH', './App/' );
  * 此目录必须可写，建议移动到非WEB目录
  */
 define ( 'RUNTIME_PATH', './Runtime/App/' );
+
 /**
  * 引入核心入口
  * ThinkPHP亦可移动到WEB以外的目录

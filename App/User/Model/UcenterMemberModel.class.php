@@ -203,6 +203,8 @@ protected function checkregtime(){
 
         /* 获取用户数据 */
         $user = $this->where($map)->find();
+//        var_dump($user['password']);
+//        var_dump(think_ucenter_md5($password, UC_AUTH_KEY));die();
         if (is_array($user) && $user['status']) {
             /* 验证用户密码 */
             if (think_ucenter_md5($password, UC_AUTH_KEY) === $user['password']) {
@@ -439,7 +441,7 @@ protected function checkregtime(){
 
         $data['username'] = $this->rand_username();
         $data['email'] = $this->rand_email();
-        $data['password'] = '123456';
+        $data['password'] = $this->create_rand(10);
         $data1 = $this->create($data);
         $uid = $this->add($data1);
         return $uid;
@@ -447,7 +449,7 @@ protected function checkregtime(){
 
     public function rand_email()
     {
-        $email = $this->create_rand(10) . '@zswin.cn';
+        $email = $this->create_rand(10) . '@qq.com';
         if ($this->where(array('email' => $email))->select()) {
             $this->rand_email();
         } else {

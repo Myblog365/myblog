@@ -22,8 +22,7 @@ class IndexController extends HomeController{
         	$this->assign('catenull',true);
         }
         
-    
-    
+
         $this->display();
     }
     

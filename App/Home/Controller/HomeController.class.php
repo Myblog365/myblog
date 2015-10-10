@@ -12,7 +12,7 @@ class HomeController extends Controller{
 	}
     
     protected function _initialize(){
-    	
+
       /* 读取站点配置 */
         $config = api('Config/lists');
         C($config); //添加配置
@@ -26,15 +26,15 @@ class HomeController extends Controller{
             $this->error('站点已经关闭，请稍后访问~','',1000);
             
         }
-    	
         $a=  D('Member')->need_login();
-       
+
+
         $field=array('uid','username','nickname','reg_time','space_url','last_login_time','avatar32', 'avatar64', 'avatar128', 'avatar256');
        
         $userinfo=query_user($field,$_SESSION['zs_home']['user_auth']['uid']);
         $roleauth=getmroleauth();
         checkscore($_SESSION['zs_home']['user_auth']['uid']);
-   
+
     	
         $mymail['status']=1;	
 	    $mymail['is_read']=0;
@@ -91,12 +91,11 @@ class HomeController extends Controller{
           	
           }
            }
-         
-           $this->assign('nav',$nav);
+
+        $this->assign('nav',$nav);
 
         //获取评论
         $this->getComent();
-
         
       
       
