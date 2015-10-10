@@ -20,7 +20,7 @@
 
 
     <if condition="$nav.name neq '标签'">
-	<li><a target="{$nav.target}" href="{$nav.url}" <if condition="$nav['active'] eq 1"> class="active"</if>>{$nav.name}</a></li>
+	<li><a  href="{$nav.url}" <if condition="$nav['active'] eq 1"> class="active"</if>>{$nav.name}</a></li>
     </if>
 	</volist>
 	<volist name="nosigncate" id="vo1">
