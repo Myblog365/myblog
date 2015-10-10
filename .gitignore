@@ -4,6 +4,7 @@ Install
 Data
 api.php
 adminBlog.php
+install.php
 about.txt
 App/Api
 App/Common/*
