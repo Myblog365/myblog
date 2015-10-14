@@ -16,3 +16,4 @@ App/Home/Common/*
 App/User/common/*
 App/User/Conf/*
 Runtime
+.idea
