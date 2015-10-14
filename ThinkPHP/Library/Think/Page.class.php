@@ -105,11 +105,10 @@ class Page{
         	$strarg.='/'.$vo;
         	
         }
+
         $this->url = ZSU('/'.ACTION_NAME.$strarg,ACTION_NAME, $this->parameter);
-        	
-        
-       
-        
+        $this->url = str_replace('page','PAGE',$this->url);
+
         /* 计算分页信息 */
         $this->totalPages = ceil($this->totalRows / $this->listRows); //总页数
         if(!empty($this->totalPages) && $this->nowPage > $this->totalPages) {
