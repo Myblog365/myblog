@@ -5,7 +5,7 @@ $config = array(
 	'QINIU_HOST' => 'http://7xiuw8.com1.z0.glb.clouddn.com/',
 	'QINIU_BUCKET' => 'myblog',
 	'QINIU_RSF_HOST' => 'http://rsf.qbox.me',
-	'SITE_URL' => 'http://myblog365.xyz/Public/static/kindeditor/'
+	'SITE_URL' => 'http://dayblog.cn/Public/static/kindeditor/'
 );
 
 function token($data, $accessKey, $secretKey){
