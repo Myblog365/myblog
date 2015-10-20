@@ -32,8 +32,8 @@ function rangeFun($a,$b){
         if($s_rand > 7){
             sleep(1);
         }
-        echo '111';
+        echo json_encode(array('kevin1'=>$num,'kevin2'=>$num));
     }else{
-        echo '3333';
+        echo json_encode(array('kevin1'=>$num,'kevin2'=>$num));
     }
 }
