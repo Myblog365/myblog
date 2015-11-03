@@ -9,4 +9,4 @@ Disallow: /Uploads
 Disallow: /Install
 Disallow: /update
 Disallow: /ThinkPHP
-Sitemap: http://myblog365.xyz/sitemap.gz
+Sitemap: http://dayblog.xyz/sitemap.gz
