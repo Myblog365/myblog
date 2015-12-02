@@ -663,6 +663,7 @@ a, a:hover, a:active, a:focus {
     -moz-transform: rotateY(360deg);
     background: #E59C9C;
     color: #587686;
+    text-decoration: none;
 }
 
 .tag-sm {
