@@ -643,22 +643,26 @@ a, a:hover, a:active, a:focus {
 }
 
 .tag {
-	display: inline-block;
-	padding: 0 8px;
-	color: #587686;
-	background-color: #E59C9C;
-	height: 24px;
-	line-height: 24px;
-	font-weight: normal;
-	font-size: 13px;
-	text-align: center;
+    transition: all .5s ease;
+    padding: 0 8px;
+    color: #fff;
+    background:#587686;
+    white-space: nowrap;
+    height: 24px;
+    line-height: 24px;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    display:inline-block;
     border-radius:4px;
 }
 
 .tag[href]:hover, .tag[href]:focus {
-	background-color: #017e66;
-	color: #fff;
-	text-decoration: none
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    background: #E59C9C;
+    color: #587686;
 }
 
 .tag-sm {
