@@ -27,7 +27,7 @@
 
 
             <div class="widget-box no-border">
-                <div class="art_title">推荐文章</div>
+                <div class="art_title"><a href="{:ZSU('/posts/','Index/posts')}">推荐文章</a></div>
                 <div class="art_left_list ">
                     <ul>
                         <article:list name="vo" cate="0" status="1" row="12"  position="1" limit="true">
@@ -39,7 +39,7 @@
             </div>
 
                  <div class="widget-box clearfix">
-                    <div class="art_title">最近评论</div>
+                    <div class="art_title"><a href="javascript:;">最近评论</a></div>
                      <volist name="comm_info" id="com">
                          <div class="user_list">
                              <eq name="com.uid" value="0">

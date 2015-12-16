@@ -32,6 +32,9 @@ class IndexController extends HomeController{
     public function hotart(){
     	$this->display();
     }
+    public function posts(){
+    	$this->display();
+    }
    public function gzart(){
     	$this->display();
     }
