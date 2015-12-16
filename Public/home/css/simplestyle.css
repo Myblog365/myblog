@@ -712,7 +712,7 @@ a, a:hover, a:active, a:focus {
 
 .taglist--inline>li {
 	display: inline-block;
-	margin-right: 5px
+	margin-right: 10px
 }
 
 .taglist--inline>li:last-child {
@@ -2448,7 +2448,7 @@ float:left;}
 }
 
 .tagPopup{
-	margin-bottom:10px;
+	margin-bottom:13px;
 	}
 	
 	#piechart li{
@@ -2765,6 +2765,14 @@ h2.title{
     margin-bottom:15px;
     padding-left: 14px;
     margin-top: 20px;
+}
+.art_title a{
+    color: #587686;
+    font-weight: bolder;
+}
+.art_title a:hover{
+    color: #E59C9C;
+    text-decoration: none;
 }
 .art_left_list{
     width:234px;

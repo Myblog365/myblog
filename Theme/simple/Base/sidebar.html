@@ -50,18 +50,18 @@
                          </div>
                      </volist>
                 </div>
-                                                <div class="widget-box clearfix">
-                    <div class="art_title">热门标签</div>
+                <div class="widget-box clearfix">
+                    <div class="art_title"><a href="{:ZSU('/alltag/','Index/alltag')}">热门标签</a></div>
                     <ul class="taglist--block">
                     <tags:list name="vo" row="22" order="num desc" limit="true">
-                                                <li class="mr10 tagPopup">
+                        <li class="mr10 tagPopup">
                             <a class="tag" href="{:ZSU('/tagart/'.$vo['id'],'Index/tagart',array('id'=>$vo['id']))}" >{$vo.title}× {$vo.num}</a>
-                           
+
                         </li>
-                        </tags:list>
-                                            </ul>
+                    </tags:list>
+                    </ul>
                 </div>
 
                 {:hook('Advs', 'below_sidebar')}
                 
-                            </div><!-- /.layout-sidebar -->
+            </div><!-- /.layout-sidebar -->
