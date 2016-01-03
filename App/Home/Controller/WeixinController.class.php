@@ -100,7 +100,6 @@ class WeixinController extends HomeController {
                     $response = $this->weixinTool->reply_event($data);
                     break;
             }
-
             $content = $response['content'];
             $type    = $response['type'];
             $wechat->response($content, $type);
